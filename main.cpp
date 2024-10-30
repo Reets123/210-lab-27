@@ -18,4 +18,21 @@ void displayVillagers(const map<string, tuple<int, string, string>>& villagers) 
     }
 }
 
-int m
+int min() {
+    // Declarations
+    map<string, tuple<int, string, string>> villagers;
+
+    // Insert initial elements
+    villagers["Audie"] = make_tuple(5, "Wolf", "Let's go!");
+    villagers["Raymond"] = make_tuple(8, "Cat", "Nice fit!");
+    villagers.insert({"Marshal", make_tuple(9, "Squirrel", "Y'all wanna hang out?")});
+
+    int choice;
+
+    do {
+        cout << "\nMenu:\n"
+             << "1. Add Villager\n"
+             << "2. Delete Villager\n"
+             << "3. Increase Friendship\n"
+             << "4. Decrease Friendship\n"
+             << "5. Searc
