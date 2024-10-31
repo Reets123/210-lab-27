@@ -18,7 +18,7 @@ void displayVillagers(const map<string, tuple<int, string, string>>& villagers) 
     }
 }
 
-int min() {
+int main() {
     // Declarations
     map<string, tuple<int, string, string>> villagers;
 
@@ -51,6 +51,11 @@ int min() {
                 cin >> name;
                 cout << "Friendship level (0-10): ";
                 cin >> friendshipLevel;
+                // Ensure friendship level is within bounds
+                if (friendshipLevel < 0 || friendshipLevel > 10) {
+                    cout << "Friendship level must be between 0 and 10.\n";
+                    break;
+                }
                 cout << "Species: ";
                 cin >> species;
                 cout << "Catchphrase: ";
@@ -59,6 +64,7 @@ int min() {
 
                 villagers[name] = make_tuple(friendshipLevel, species, catchphrase);
                 cout << name << " added.\n";
+                displayVillagers(villagers); // Display after adding
                 break;
             }
             case 2: { // Delete Villager
@@ -69,9 +75,10 @@ int min() {
                 } else {
                     cout << name << " not found.\n";
                 }
+                displayVillagers(villagers); // Display after deleting
                 break;
             }
-            case 3: { 
+            case 3: { // Increase Friendship
                 cout << "Villager name to increase friendship: ";
                 cin >> name;
                 auto it = villagers.find(name);
@@ -86,9 +93,10 @@ int min() {
                 } else {
                     cout << name << " not found.\n";
                 }
+                displayVillagers(villagers); // Display after increasing
                 break;
             }
-            case 4: { 
+            case 4: { // Decrease Friendship
                 cout << "Villager name to decrease friendship: ";
                 cin >> name;
                 auto it = villagers.find(name);
@@ -103,9 +111,10 @@ int min() {
                 } else {
                     cout << name << " not found.\n";
                 }
+                displayVillagers(villagers); // Display after decreasing
                 break;
             }
-            case 5: { 
+            case 5: { // Search for Villager
                 cout << "Villager name to search: ";
                 cin >> name;
                 auto it = villagers.find(name);
