@@ -125,4 +125,12 @@ int min() {
                 break;
             }
             case 7: // Exit
-                cout << "
+                cout << "Exiting program.\n";
+                break;
+            default:
+                cout << "Invalid option! Please try again.\n";
+        }
+    } while (choice != 7);
+
+    return 0;
+}
