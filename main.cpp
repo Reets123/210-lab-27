@@ -53,4 +53,24 @@ int min() {
                 cin >> friendshipLevel;
                 cout << "Species: ";
                 cin >> species;
-                cout << "Catch
+                cout << "Catchphrase: ";
+                cin.ignore(); 
+                getline(cin, catchphrase);
+
+                villagers[name] = make_tuple(friendshipLevel, species, catchphrase);
+                cout << name << " added.\n";
+                break;
+            }
+            case 2: { // Delete Villager
+                cout << "Villager name to delete: ";
+                cin >> name;
+                if (villagers.erase(name)) {
+                    cout << name << " deleted.\n";
+                } else {
+                    cout << name << " not found.\n";
+                }
+                break;
+            }
+            case 3: { // Increase Friendship
+                cout << "Villager name to increase friendship: ";
+                cin >> name
