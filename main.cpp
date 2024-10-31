@@ -35,4 +35,22 @@ int min() {
              << "2. Delete Villager\n"
              << "3. Increase Friendship\n"
              << "4. Decrease Friendship\n"
-             << "5. Searc
+             << "5. Search for Villager\n"
+             << "6. Display all Villagers\n"
+             << "7. Exit\n"
+             << "Enter your choice: ";
+        cin >> choice;
+
+        string name;
+        switch (choice) {
+            case 1: { // Add Villager
+                int friendshipLevel;
+                string species, catchphrase;
+
+                cout << "Villager name: ";
+                cin >> name;
+                cout << "Friendship level (0-10): ";
+                cin >> friendshipLevel;
+                cout << "Species: ";
+                cin >> species;
+                cout << "Catch
