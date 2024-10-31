@@ -108,4 +108,21 @@ int min() {
             case 5: { 
                 cout << "Villager name to search: ";
                 cin >> name;
-                auto it = villager
+                auto it = villagers.find(name);
+                if (it != villagers.end()) {
+                    const auto& details = it->second;
+                    cout << name << " ["
+                         << get<0>(details) << ", "
+                         << get<1>(details) << ", "
+                         << get<2>(details) << "] found.\n";
+                } else {
+                    cout << name << " not found.\n";
+                }
+                break;
+            }
+            case 6: { // Display Villagers
+                displayVillagers(villagers);
+                break;
+            }
+            case 7: // Exit
+                cout << "
