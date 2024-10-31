@@ -71,6 +71,27 @@ int min() {
                 }
                 break;
             }
-            case 3: { // Increase Friendship
+            case 3: { 
                 cout << "Villager name to increase friendship: ";
-                cin >> name
+                cin >> name;
+                auto it = villagers.find(name);
+                if (it != villagers.end()) {
+                    int& friendshipLevel = get<0>(it->second);
+                    if (friendshipLevel < 10) {
+                        friendshipLevel++;
+                        cout << "Increased friendship for " << name << ".\n";
+                    } else {
+                        cout << name << "'s friendship level is already at maximum.\n";
+                    }
+                } else {
+                    cout << name << " not found.\n";
+                }
+                break;
+            }
+            case 4: { 
+                cout << "Villager name to decrease friendship: ";
+                cin >> name;
+                auto it = villagers.find(name);
+                if (it != villagers.end()) {
+                    int& friendshipLevel = get<0>(it->second);
+                    if (friends
