@@ -94,4 +94,18 @@ int min() {
                 auto it = villagers.find(name);
                 if (it != villagers.end()) {
                     int& friendshipLevel = get<0>(it->second);
-                    if (friends
+                    if (friendshipLevel > 0) {
+                        friendshipLevel--;
+                        cout << "Decreased friendship for " << name << ".\n";
+                    } else {
+                        cout << name << "'s friendship level is already at minimum.\n";
+                    }
+                } else {
+                    cout << name << " not found.\n";
+                }
+                break;
+            }
+            case 5: { 
+                cout << "Villager name to search: ";
+                cin >> name;
+                auto it = villager
